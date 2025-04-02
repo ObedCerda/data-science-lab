@@ -1,36 +1,25 @@
-/*
-                DEVCONTAINER.JSON
-        CONFIGURA COMO VSCODE INTERACTUA CON 
-        EL CONTAINER DE DOCKER, INSTALA EXTENSIONES,
-        CONFIGURA TERMINAL Y AUTOMATIZA SETUP
-*/
 
 {
-    //Nombre del entorno que aparecera en VSCode
+
     "name": "Elite Python Dev",
 
-    //Define como construir el contenedor (Dockerfile)
     "build" : {
         "dockerfile": "Dockerfile"
     },
 
 
-    //Configuraciones del entorno del contenedor
+
     "settings": {
-        // Terminal predeterminada: bash
         "terminal.integrated.defaultProfile.linux": "bash"
     },
 
-    //Comando que se ejecuta al terminar de crear el contenedor
     "postCreateCommand": "python -m ipykernel install --user --name=dev",
 
-    //Extensiones de VSCode que se instalaran automaticamente dentro del contenedor
     "extensions" : [
         "ms-python.python",
         "ms-toolsai.jupyter"
     ],
 
-    //Usuario que ejecuta el contenedor (root para acceso completo)
     "remoteUser": "root"
 
 }
